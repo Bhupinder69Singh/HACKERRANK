@@ -1,3 +1,3 @@
 # HACKERRANK-SQL
 ALL CODES, 
-DATABASE Used= MySQL
+Database Used= MySQL

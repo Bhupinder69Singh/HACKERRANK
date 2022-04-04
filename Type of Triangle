@@ -1,0 +1,10 @@
+SELECT CASE 
+       WHEN A+B>C AND B+C>A AND A+C>B THEN /* this condition checks whether it is a triangle or not because sum of two sides of triangle is greater than the third side*/
+          CASE 
+          WHEN (A=B) AND (B=C) THEN 'Equilateral'/* check for all sides are qual or not*/
+          WHEN (A=B) OR (B=C) OR (A=C) THEN 'Isosceles'/* checks if any two sides are equal or not*/
+          ELSE 'Scalene'
+          END
+       ELSE 'Not A Triangle'/*this executes if it is not a triangle*/
+       END
+FROM TRIANGLES;

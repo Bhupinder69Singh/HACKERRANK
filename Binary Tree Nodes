@@ -1,0 +1,8 @@
+SELECT 
+CASE 
+    WHEN P IS NULL THEN Concat(N,' ','Root')/*this here checks the value of parent means if it is Null means it does not have a parent and is root node*/
+    WHEN N IN(SELECT DISTINCT P FROM BST) THEN CONCAT(N,' ','Inner')/*this hear checks for each n in p where if node has a parent then it is inner  */
+    ELSE Concat(N,' ','Leaf')
+END
+FROM BST
+ORDER BY N ASC/*this orders it in ascending order */

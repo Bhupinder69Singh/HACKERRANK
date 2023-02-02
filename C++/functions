@@ -1,0 +1,26 @@
+#include <iostream>
+#include <cstdio>
+#include<set>
+using namespace std;
+//LOGIC-->here we have used set to find the max 
+//set has a property that elements in it are in sorted order 
+//so we ran a loop upto last element(which will be max)
+int max_of_four(int a,int b,int c,int d){
+      set<int> s={a,b,c,d};
+      int max=0;
+      for(int i:s){
+        max=i;
+      };
+      return max;
+      
+       
+}
+
+int main() {
+    int a, b, c, d;
+    scanf("%d %d %d %d", &a, &b, &c, &d);
+    int ans = max_of_four(a, b, c, d);
+    printf("%d", ans);
+    
+    return 0;
+}

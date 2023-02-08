@@ -1,0 +1,33 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    int N;
+    cin>>N;
+    vector<int> v;
+    while(N != 0){
+        int vec_element;
+        cin>>vec_element;
+        v.push_back(vec_element);
+        N--;
+    }   
+    int x;//postion of element to be removed i.e if x=2 then remove 2nd element not index-wise
+    cin>>x;//but 2nd element is present at index 1
+    v.erase(v.begin()+(x-1));//this will remove element at the specified position
+    int i,j;//they specify the range from where to where we want to erase
+    cin>>i>>j;
+    v.erase(v.begin()+(i-1),v.begin()+(j-1));
+    cout<<v.size()<<endl;
+    for(int k:v){
+        
+        cout<<k<<" ";
+    }
+
+    return 0;
+}
+

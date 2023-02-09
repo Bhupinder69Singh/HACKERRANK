@@ -1,0 +1,33 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    int N;
+    cin>>N;
+    vector<int> v;
+    while(N != 0){
+        int elements;
+        cin>>elements;
+        v.push_back(elements);
+        N--;
+    }
+    int queries;
+    cin>>queries;
+    int check_element;
+    while(queries != 0){ 
+        cin>>check_element;
+        int r=lower_bound(v.begin(),v.end(),check_element)-v.begin();//this will return index 
+        if(v[r]==check_element){
+            cout<<"Yes "<<r+1<<endl;
+        }
+        else{
+            cout<<"No "<<r+1<<endl;
+        }
+        queries--;
+    }
+     return 0;
+}

@@ -1,0 +1,42 @@
+/*
+here we are given if query(y) is of type:
+1-->Add an element  to the set.
+2-->Delete an element  from the set. (If the number  is not present in the set, then do nothing).
+3--> If the number  is present in the set, then print "Yes"(without quotes) else print "No"(without quotes).
+*/
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <set>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */ 
+    int Q;
+    cin>>Q;
+    int y,x;
+    set<int> s;
+    while(Q != 0){
+        cin>>y>>x;
+        if(y==3){
+            int result=s.count(x);
+            if (result==1){
+                cout<<"Yes"<<endl;
+            }
+            else {
+              cout<<"No"<<endl;
+            }
+        }
+        if(y==1) {
+            s.insert(x);
+        }
+        if(y==2){
+            s.erase(x);
+        }
+        Q--;
+    }  
+    return 0;
+}
